@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected : ' + socket.id);
+  console.log('a user is connected : ' + socket.id);
 
   players[players.length] = {socketid : socket.id};
 
