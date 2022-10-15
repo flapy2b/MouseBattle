@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<style>
+		body{
+			cursor: none;
+		}
+		.croix, .label{
+			position: absolute;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="position">Bouges la souris pour démarrer le jeu</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity=
+		"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous">
+	</script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	function generateRandomColorHex() {
+	  return "#" + ("00000" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16)).slice(-6);
+	}
+	
+	$(document).ready(function () {
+		var socket = io();
+		var players = [];
+		id = Math.floor(Math.random() * 10000);
+		$('#playerid').html("Your player ID : " + id);
+
+		// Receive a move from the server
+		socket.on('move', function(msg){
+			msg.forEach(m => {
+				// If element with ID dosn't exists
+				if($('#croix' + m.id).length == 0){
+					$('body').append("<div id='croix" + m.id +
+														"' class='croix'>+</div>");
+					$('body').append("<div id='label" + m.id +
+														"' class='label'>" + m.id +
+														"</div>");
+
+					color = generateRandomColorHex();
+					$('#croix' + m.id).css('color', color);
+					$('#label' + m.id).css('color', color);
+				}
+				$('#croix' + m.id).css('left', m.x + 'px');
+				$('#croix' + m.id).css('top', m.y + 'px');
+				$('#label' + m.id).css('left', m.x - 15 + 'px');
+				$('#label' + m.id).css('top', m.y - 15 + 'px');
+			});
+		});
+
+		// Receive a deconnection from the server
+		socket.on('del', function(msg){
+			$('#croix' + msg).remove();
+			$('#label' + msg).remove();
+		});
+
+		// The player moves
+		$( document ).on( "mousemove", function( event ) {
+			position = '{"id":"' + id + '","x":"' + event.pageX + '","y":"' +
+									event.pageY + '"}';
+			$('#position').html("ID : " + id);
+			socket.emit('position', position);
+		});
+	});
+	</script>
+</body>
+
+</html>
