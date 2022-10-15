@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
   // A player disconnect
   socket.on('disconnect', () => {
     for (var i = 0; i < players.length; i++) {
-      console.log( "A user is disconnected + " + players[i].socketid);
+      console.log( "A user is disconnected : " + players[i].socketid);
       if(players[i].socketid === socket.id){
         // send a message to all players with the ID
         io.emit('del', players[i].id);
