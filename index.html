@@ -10,7 +10,7 @@
 		body{
 			cursor: none;
 		}
-		.croix, .label{
+		.player, .label{
 			position: absolute;
 		}
 	</style>
@@ -42,19 +42,19 @@
 		socket.on('move', function(msg){
 			msg.forEach(m => {
 				// If element with ID dosn't exists
-				if($('#croix' + m.id).length == 0){
-					$('body').append("<div id='croix" + m.id +
-														"' class='croix'>+</div>");
+				if($('#player' + m.id).length == 0){
+					$('body').append("<div id='player" + m.id +
+														"' class='player'>+</div>");
 					$('body').append("<div id='label" + m.id +
 														"' class='label'>" + m.id +
 														"</div>");
 
 					color = generateRandomColorHex();
-					$('#croix' + m.id).css('color', color);
+					$('#player' + m.id).css('color', color);
 					$('#label' + m.id).css('color', color);
 				}
-				$('#croix' + m.id).css('left', m.x + 'px');
-				$('#croix' + m.id).css('top', m.y + 'px');
+				$('#player' + m.id).css('left', m.x + 'px');
+				$('#player' + m.id).css('top', m.y + 'px');
 				$('#label' + m.id).css('left', m.x - 15 + 'px');
 				$('#label' + m.id).css('top', m.y - 15 + 'px');
 			});
@@ -62,7 +62,7 @@
 
 		// Receive a deconnection from the server
 		socket.on('del', function(msg){
-			$('#croix' + msg).remove();
+			$('#player' + msg).remove();
 			$('#label' + msg).remove();
 		});
 
