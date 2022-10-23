@@ -1,6 +1,7 @@
 # MouseBattle
 
-**A multiplayer mouse battle in a simple webpage.**
+**A multiplayer mouse battle in a simple webpage.**   
+**Leave a ⭐️ to support the project!**   
 
 ## Installation ##
 
