@@ -5,7 +5,7 @@
 
 ## Installation ##
 
- - First, intall [Node.JS](https://nodejs.org/en/)
- - Install packages : ```npm i express socket.io```
- - Run server : ```node index.js```
+ - First, intall [Node.JS](https://nodejs.org/)
+ - Go to the root of the project directory
+ - Run ```sh start.sh``` or ```start.bat```
  - Test on your browser(s) : http://localhost:3000
