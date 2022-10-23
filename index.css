@@ -11,16 +11,14 @@ html, body {
 
 
 
+/*		+ – – – – – – – – +
+		| NOT IMPLEMENTED |
+		+ – – – – – – – – +
 
-
-// + – – – – – – – – + //
-// | NOT IMPLEMENTED | //
-// + – – – – – – – – + //
-
-div. {
+div.selector-page {
 	height: 450px;
 	width: 100%;
-	font-family: "Fira Sans", sans-serif;
+	font-family: sans-serif;
 	background: #fff;
 	cursor: default;
 }
@@ -84,10 +82,6 @@ div.color {
 	cursor: pointer;
 }
 
-div.color:hover {
-	outline: 4px solid #bbb;
-}
-
 input {
 	margin-left: calc(50% - 172px);
 	height: 50px;
@@ -97,6 +91,7 @@ input {
 	outline: 2px solid #bbb;
 	border-radius: 10px;
 	font: 25px "Fira Sans", sans-serif;
+	caret-color: #000;
 }
 
 input:hover {
@@ -104,7 +99,7 @@ input:hover {
 }
 
 input:focus {
-	outline: 2px solid #07f;
+	outline: 4px solid #07f;
 }
 
 button.finish-btn {
@@ -159,4 +154,8 @@ button.finish-btn:focus {
 }
 #c-8 {
 	background: #d9866a;
+}
+
+.color-selected {
+	outline: 2px solid #07f;
 }
