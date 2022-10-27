@@ -7,9 +7,14 @@ const io = new Server(server);
 var players = [];
 
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/', function(request, response, next){
+  response.send(request.body);
 });
 
 io.on('connection', (socket) => {
@@ -32,7 +37,8 @@ io.on('connection', (socket) => {
 
   // A player move his mouse
   socket.on('position', (msg) => {
-    msg = JSON.parse(msg);
+    //console.log(msg);
+    //msg = JSON.parse(msg);
 
     // check if player exists to update data
     for (var i = 0; i < players.length; i++) {
@@ -41,6 +47,8 @@ io.on('connection', (socket) => {
           players[i].x = msg.x;
           players[i].y = msg.y;
           players[i].id = msg.id;
+          players[i].username = msg.username;
+          players[i].color = msg.color;
         }
       }
     }
@@ -52,7 +60,9 @@ io.on('connection', (socket) => {
 server.listen(3000, () => {
   console.clear();
   console.log('                          ');
-  console.log('          Started!        ');
-  console.log('  Listening on port 3000  ');
+  console.log('  + - - - - - - - - - - + ');
+  console.log('  |      Started!       | ');
+  console.log('  |   localhost:3000    | ');
+  console.log('  + - - - - - - - - - - + ');
   console.log('                          ');
 });

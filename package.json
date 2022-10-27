@@ -1,10 +1,12 @@
 {
   "name": "mouse",
   "version": "1.0.0",
-  "description": "",
+  "description": "A multiplayer mouse battle in a simple webpage.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm i express socket.io && node server.js",
+    "run": "npm i express socket.io && node server.js",
+    "start": "npm i express socket.io && node server.js"
   },
   "author": "",
   "license": "ISC",

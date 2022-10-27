@@ -1,0 +1,9 @@
+html, body {
+  cursor: none;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.player, .label{
+  position: absolute;
+}

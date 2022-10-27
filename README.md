@@ -7,5 +7,5 @@
 
  - First, intall [Node.JS](https://nodejs.org/)
  - Go to the root of the project directory
- - Run ```sh start.sh``` (*or *```start.bat```* for Windows*)
- - Test on your browser(s) : http://localhost:3000
+ - Run ```npm start``` (or ```npm run```)
+ - Test on your browser(s) with the [local adress](http://localhost:3000) (and port 3000)
