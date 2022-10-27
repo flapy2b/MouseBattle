@@ -13,14 +13,14 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('A user is connected : ' + socket.id);
+  console.log('[+] A user is connected : ' + socket.id);
 
   players[players.length] = {socketid : socket.id};
 
   // A player disconnect
   socket.on('disconnect', () => {
     for (var i = 0; i < players.length; i++) {
-      console.log( "A user is disconnected : " + players[i].socketid);
+      console.log( "[-] A user is disconnected : " + players[i].socketid);
       if(players[i].socketid === socket.id){
         // send a message to all players with the ID
         io.emit('del', players[i].id);
@@ -51,6 +51,8 @@ io.on('connection', (socket) => {
 
 server.listen(3000, () => {
   console.clear();
+  console.log('                          ');
   console.log('          Started!        ');
   console.log('  Listening on port 3000  ');
+  console.log('                          ');
 });

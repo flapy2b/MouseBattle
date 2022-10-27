@@ -6,6 +6,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="index.css" rel="stylesheet"/>
+	<style>
+		html, body {
+			cursor: none;
+			font-family: sans-serif;
+			user-select: none;
+		}
+
+		.player, .label{
+			position: absolute;
+		}
+		</style>
 </head>
 
 <body>
@@ -23,7 +34,7 @@
 	function generateRandomColorHex() {
 	  return "#" + ("00000" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16)).slice(-6);
 	}
-	
+
 	$(document).ready(function () {
 		var socket = io();
 		var players = [];
