@@ -55,6 +55,16 @@ io.on('connection', (socket) => {
     // Send the data to all players
     io.emit('move', players);
   });
+
+  // Send random coins to the players
+  setInterval(() => {
+    coin = {};
+    coin.x = Math.floor(Math.random() * 1024);
+    coin.y = Math.floor(Math.random() * 1024);
+    coin = JSON.stringify(coin);
+    console.log('Coin send: ' + coin)
+    io.emit('coin', coin);
+  }, 10000);
 });
 
 server.listen(3000, () => {

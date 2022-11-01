@@ -7,3 +7,11 @@ html, body {
 .player, .label{
   position: absolute;
 }
+
+#coin{
+  font-size: 20px;
+  color:red;
+  position: absolute;
+  color:#FACC2E; 
+  font-size:20px"
+}

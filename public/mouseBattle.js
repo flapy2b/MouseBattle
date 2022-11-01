@@ -1,17 +1,12 @@
-function generateRandomColorHex() {
-  return "#" + ("00000" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16)).slice(-6);
-}
-
 $(document).ready(function () {
   var socket = io();
   var players = [];
   let searchParams = new URLSearchParams(window.location.search);
   var username = searchParams.get('username');
   var color = searchParams.get('color');
-  var position = position = {};
+  var position = {};
 
   id = Math.floor(Math.random() * 10000);
-  //$('#position').html("ID : " + id + "<br> Username : " + username + " <br> Color : " + color);
 
   // Receive a move from the server
   socket.on('move', function(msg){
@@ -41,6 +36,15 @@ $(document).ready(function () {
     $('#label' + msg).remove();
   });
 
+  socket.on('coin', function(msg){
+    $('#coin').remove();
+    msg = JSON.parse(msg);
+    $('body').append("<div id='coin'><i class='fa-solid fa-coins'></i></div>");
+    $('#coin').css('left', msg.x + 'px');
+    $('#coin').css('top', msg.y + 'px');
+    console.log($('#coin'));
+  });
+
   // The player moves
   $( document ).on( "mousemove", function( event ) {
     position.id = id;
@@ -48,10 +52,6 @@ $(document).ready(function () {
     position.y = event.pageY;
     position.username = username;
     position.color = color;
-    /*
-    position = '{"id":"' + id + '","x":"' + event.pageX + '","y":"' +
-                event.pageY + '","username": "' + username + '","color":"' + color + '"}';
-              */
     socket.emit('position', position);
   });
 });
