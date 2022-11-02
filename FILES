@@ -1,0 +1,21 @@
+ㅤ
+ ┌───────────────────────────────┐
+ ├─ Mouse Battle                 │
+ │    ├─ index.html              │
+ │    ├─ package-lock.json       │
+ │    ├─ package.json            │
+ │    ├─ README.md               │
+ │    ├─ server.js               │
+ │    ├─ node_modules            │
+ │	  │    └– [...]              │
+ │    ├─ .git                    │
+ │	  │    └– [...]              │
+ │	  ├─ public                  │
+ │	  │    ├─ coin.gif           │
+ │    │    ├─ index.css          │
+ │    │    ├─ index.js           │
+ │	  │    ├─ mouseBattle.css    │
+ │	  │    ├─ mouseBattle.html   │
+ ├────┘    └─ mouseBattle.js     │
+ └───────────────────────────────┘
+ㅤ
