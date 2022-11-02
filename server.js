@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', function(request, response, next){
-  response.send(request.body);
+	response.send(request.body);
 });
 
 io.on('connection', (socket) => {
@@ -62,17 +62,18 @@ io.on('connection', (socket) => {
     coin.x = Math.floor(Math.random() * 1024);
     coin.y = Math.floor(Math.random() * 1024);
     coin = JSON.stringify(coin);
-    console.log('Coin send: ' + coin)
+    console.log('[o] Coin send: ' + coin)
     io.emit('coin', coin);
   }, 10000);
 });
 
+// console.log on start and define
 server.listen(3000, () => {
   console.clear();
-  console.log('                          ');
-  console.log('  + - - - - - - - - - - + ');
-  console.log('  |      Started!       | ');
-  console.log('  |   localhost:3000    | ');
-  console.log('  + - - - - - - - - - - + ');
-  console.log('                          ');
+  console.log('                           ');
+  console.log('  + - - - - - - - - - - +  ');
+  console.log('  |      Started!       |  ');
+  console.log('  |   localhost:3000    |  ');
+  console.log('  + - - - - - - - - - - +  ');
+  console.log('                           ');
 });

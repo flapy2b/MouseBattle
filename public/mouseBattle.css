@@ -1,17 +1,21 @@
 html, body {
-  cursor: none;
-  font-family: sans-serif;
-  user-select: none;
+	cursor: none;
+	font-family: sans-serif;
+	user-select: none;
 }
 
-.player, .label{
-  position: absolute;
+.player, .label {
+	position: absolute;
 }
 
-#coin{
-  font-size: 20px;
-  color:red;
-  position: absolute;
-  color:#FACC2E; 
-  font-size:20px"
+#coin {
+	font-size: 20px;
+	position: absolute;
+	color:#FACC2E;
+	z-index:-9999999;
+}
+
+i.icon-coin::before {
+	content:url(/coin.gif);
+	z-index:-9999999;
 }
