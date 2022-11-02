@@ -9,7 +9,6 @@ html, body {
 }
 
 #coin {
-	font-size: 20px;
 	position: absolute;
 	color:#FACC2E;
 	z-index:-9999999;
@@ -18,4 +17,6 @@ html, body {
 i.icon-coin::before {
 	content:url(/coin.gif);
 	z-index:-9999999;
+	height: 20px;
+	width: 20px;
 }

@@ -39,7 +39,7 @@ $(document).ready(function () {
   socket.on('coin', function(msg){
     $('#coin').remove();
     msg = JSON.parse(msg);
-    $('body').append("<div id='coin'><i class='fa-solid fa-coins'></i></div>");
+    $('body').append("<div id='coin'><i class='icon-coin'></i></div>");
     $('#coin').css('left', msg.x + 'px');
     $('#coin').css('top', msg.y + 'px');
     console.log($('#coin'));
