@@ -10,6 +10,7 @@ $(document).ready(function () {
 
   // Receive a move from the server
   socket.on('move', function(msg){
+    scores = "";
     msg.forEach(m => {
       // If element with ID dosn't exists
       if($('#player' + m.id).length == 0){
@@ -27,7 +28,11 @@ $(document).ready(function () {
       $('#player' + m.id).css('top', m.y + 'px');
       $('#label' + m.id).css('left', m.x - 15 + 'px');
       $('#label' + m.id).css('top', m.y - 15 + 'px');
+
+      scores += m.username + " : " + m.score + "<br>";
     });
+
+    $('#scores').html(scores);
   });
 
   // Receive a deconnection from the server
@@ -39,10 +44,28 @@ $(document).ready(function () {
   socket.on('coin', function(msg){
     $('#coin').remove();
     msg = JSON.parse(msg);
-    $('body').append("<div id='coin'><i class='icon-coin'></i></div>");
+    $('body').append("<div id='coin'></div>");
     $('#coin').css('left', msg.x + 'px');
     $('#coin').css('top', msg.y + 'px');
     console.log($('#coin'));
+  });
+
+  socket.on('score', function(msg){
+    msg.forEach(m => {
+      scores += m.username + " : " + m.score + "<br>";
+    });
+    $('#scores').html(scores);
+    $('#coin').remove();
+  });
+
+  $('#coin2').on("click", function(){
+    console.log("Coin catched!");
+    position.score++;
+    socket.emit('score', position);
+  });
+
+  $('div').on('click', function() {
+    alert($(this).attr('id'));
   });
 
   // The player moves

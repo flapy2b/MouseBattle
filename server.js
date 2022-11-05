@@ -20,7 +20,7 @@ app.post('/', function(request, response, next){
 io.on('connection', (socket) => {
   console.log('[+] A user is connected : ' + socket.id);
 
-  players[players.length] = {socketid : socket.id};
+  players[players.length] = {socketid : socket.id, score : 0};
 
   // A player disconnect
   socket.on('disconnect', () => {
@@ -37,9 +37,6 @@ io.on('connection', (socket) => {
 
   // A player move his mouse
   socket.on('position', (msg) => {
-    //console.log(msg);
-    //msg = JSON.parse(msg);
-
     // check if player exists to update data
     for (var i = 0; i < players.length; i++) {
       if(players.length > 0){
@@ -56,13 +53,24 @@ io.on('connection', (socket) => {
     io.emit('move', players);
   });
 
+  socket.on('score', (msg) => {
+    for (var i = 0; i < players.length; i++) {
+      if(players.length > 0){
+        if(players[i].socketid === socket.id){
+          players[i].score = msg.score;
+        }
+      }
+    }
+    io.emit('score', players);
+  });
+
   // Send random coins to the players
   setInterval(() => {
     coin = {};
-    coin.x = Math.floor(Math.random() * 1024);
-    coin.y = Math.floor(Math.random() * 1024);
+    coin.x = Math.floor(Math.random() * 500);
+    coin.y = Math.floor(Math.random() * 500);
     coin = JSON.stringify(coin);
-    console.log('[o] Coin send: ' + coin)
+    console.log('[o] Coin send: ' + coin);
     io.emit('coin', coin);
   }, 10000);
 });

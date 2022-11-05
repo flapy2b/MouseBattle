@@ -11,12 +11,14 @@ html, body {
 #coin {
 	position: absolute;
 	color:#FACC2E;
-	z-index:-9999999;
-}
-
-i.icon-coin::before {
+	/*z-index:-9999999;*/
 	content:url(/coin.gif);
-	z-index:-9999999;
 	height: 20px;
 	width: 20px;
+}
+
+#scoreBoard{
+	float:right;
+	border: 1px dotted #bbb;
+	padding: 5px;
 }
