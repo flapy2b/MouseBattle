@@ -26,8 +26,8 @@ $(document).ready(function () {
       }
       $('#player' + m.id).css('left', m.x + 'px');
       $('#player' + m.id).css('top', m.y + 'px');
-      $('#label' + m.id).css('left', m.x - 15 + 'px');
-      $('#label' + m.id).css('top', m.y - 15 + 'px');
+      $('#label' + m.id).css('left', m.x + 'px');
+      $('#label' + m.id).css('top', m.y - 25 + 'px');
 
       scores += m.username + " : " + m.score + "<br>";
     });
