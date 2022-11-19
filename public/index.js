@@ -5,19 +5,19 @@ $(document).ready(function () {
 
 	// Set the color
 	$(".color").click(function () {
-	    $(".color").css("border", "2px solid #bbb");
-	    $(this).css("border", "2px solid #07f");
-	    $("#colorValue").val($(this).children().css("background-color"));
-	    $colorSelected = true;
-	    if($username){
+		$(".color").css("border", "2px solid #bbb");
+		$(this).css("border", "2px solid #07f");
+		$("#colorValue").val($(this).children().css("background-color"));
+		$colorSelected = true;
+		if($username){
 			// Set button style to disabled
-	    	$('#finish-btn').removeAttr('disabled');
+			$('#finish-btn').removeAttr('disabled');
 		}
 	});
 	// Set the username
 	$('#username').change(function(){
-	    $username = true;
-	    if($colorSelected){
+		$username = true;
+		if($colorSelected){
 			$('#finish-btn').removeAttr('disabled');
 		}
 	})
@@ -27,10 +27,10 @@ $(document).ready(function () {
 // Disable the "enter to send" to prevent bugs
 // With "event.keyCode"
 $(document).ready(function() {
-  $(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+		}
+	});
 });

@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="index.css" rel="stylesheet"/>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="index.js"></script>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="index.css" rel="stylesheet"/>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+</head>
 
-	<body>
-		<div class="home">
-			<h1>Mouse Battle</h1>
-			<form action="mouseBattle.html" method="get">
-				<div class="username">
-					<input spellcheck="false" placeholder="Username" name="username" id="username" maxlength="16" </input>
-				</div>
-				<div class="color-palette">
-					<div class="color"><div id="c-0" class="color2"></div></div>
-					<div class="color"><div id="c-1" class="color2"></div></div>
-					<div class="color"><div id="c-2"  class="color2"></div></div>
-					<div class="color"><div id="c-3"  class="color2"></div></div>
-					<div class="color"><div id="c-4" class="color2"></div></div>
-					<div class="color"><div id="c-5" class="color2"></div></div>
-					<div class="color"><div id="c-6" class="color2"></div></div>
-					<div class="color"><div id="c-7" class="color2"></div></div>
-					<div class="color"><div id="c-8" class="color2"></div></div>
-				</div>
-				<div class="finish">
-					<button id="finish-btn" disabled>Let's go!</button>
-				</div>
-				<input type="hidden" name="color" id="colorValue" />
-			</form>
-		</div>
-	</body>
+<body>
+	<div class="home">
+		<h1>Mouse Battle</h1>
+
+		<form action="mouseBattle.html" method="get">
+
+			<div class="username">
+				<input spellcheck="false" placeholder="Username" name="username" id="username" maxlength="16" </input>
+			</div>
+
+			<div class="color-palette">
+				<div class="color"><div id="c-0" class="color2"></div></div>
+				<div class="color"><div id="c-1" class="color2"></div></div>
+				<div class="color"><div id="c-2"  class="color2"></div></div>
+				<div class="color"><div id="c-3"  class="color2"></div></div>
+				<div class="color"><div id="c-4" class="color2"></div></div>
+				<div class="color"><div id="c-5" class="color2"></div></div>
+				<div class="color"><div id="c-6" class="color2"></div></div>
+				<div class="color"><div id="c-7" class="color2"></div></div>
+				<div class="color"><div id="c-8" class="color2"></div></div>
+			</div>
+
+			<div class="finish">
+				<button id="finish-btn" disabled>Let's go!</button>
+			</div>
+
+			<input type="hidden" name="color" id="colorValue" />
+		</form>
+	</div>
+</body>
 </html>
