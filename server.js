@@ -1,10 +1,11 @@
+// Create the server
 const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-var players = [];
+var players = []; // Define the players variable
 
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
@@ -17,9 +18,10 @@ app.post('/', function(request, response, next){
 	response.send(request.body);
 });
 
+// When someone connect, console.log()
 io.on('connection', (socket) => {
   console.log('[+] A user is connected : ' + socket.id);
-
+  // Set score to 0
   players[players.length] = {socketid : socket.id, score : 0};
 
   // A player disconnect
@@ -27,9 +29,9 @@ io.on('connection', (socket) => {
     for (var i = 0; i < players.length; i++) {
       console.log( "[-] A user is disconnected : " + players[i].socketid);
       if(players[i].socketid === socket.id){
-        // send a message to all players with the ID
+        // Send a message to all players with the ID
         io.emit('del', players[i].id);
-        // delete the player
+        // Delete the player
         players.splice(i, 1);
       }
     }
@@ -37,7 +39,7 @@ io.on('connection', (socket) => {
 
   // A player move his mouse
   socket.on('position', (msg) => {
-    // check if player exists to update data
+    // Check if player exists to update data
     for (var i = 0; i < players.length; i++) {
       if(players.length > 0){
         if(players[i].socketid === socket.id){
@@ -67,6 +69,7 @@ io.on('connection', (socket) => {
   // Send random coins to the players
   setInterval(() => {
     coin = {};
+    // Random position
     coin.x = Math.floor(Math.random() * 500);
     coin.y = Math.floor(Math.random() * 500);
     coin = JSON.stringify(coin);
@@ -75,7 +78,7 @@ io.on('connection', (socket) => {
   }, 10000);
 });
 
-// console.log on start and define
+// A console.log() on start and define the port
 server.listen(3000, () => {
   console.clear();
   console.log('                           ');

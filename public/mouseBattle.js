@@ -6,6 +6,7 @@ $(document).ready(function () {
   var color = searchParams.get('color');
   var position = {};
 
+  // Set an ID
   id = Math.floor(Math.random() * 10000);
 
   // Receive a move from the server
@@ -16,14 +17,12 @@ $(document).ready(function () {
       if($('#player' + m.id).length == 0){
         $('body').append("<div id='player" + m.id +
                           "' class='player'>+</div>");
-        $('body').append("<div id='label" + m.id +
-                          "' class='label'>" + m.username +
-                          "</div>");
-
-        //color = generateRandomColorHex();
+        $('body').append("<div id='label" + m.id + "' class='label'>" + m.username + "</div>");
+        // Set the color of the player
         $('#player' + m.id).css('color', m.color);
         $('#label' + m.id).css('color', m.color);
       }
+      // Move the player
       $('#player' + m.id).css('left', m.x + 'px');
       $('#player' + m.id).css('top', m.y + 'px');
       $('#label' + m.id).css('left', m.x - 15 + 'px');
@@ -41,6 +40,7 @@ $(document).ready(function () {
     $('#label' + msg).remove();
   });
 
+  // Change the position of the coin
   socket.on('coin', function(msg){
     $('#coin').remove();
     msg = JSON.parse(msg);
@@ -59,7 +59,7 @@ $(document).ready(function () {
   });
 
   $('#coin2').on("click", function(){
-    console.log("Coin catched!");
+    console.log("[=] Coin catched!");
     position.score++;
     socket.emit('score', position);
   });
