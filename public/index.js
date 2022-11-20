@@ -23,8 +23,7 @@ $(document).ready(function () {
 	})
 
 	$('#finish-btn').on('click', function(){
-		if($('#username').val().length > 2 && $('#username').val().length < 13 && 
-			$('#username').val().match(/[^a-zA-Z0-9_-]+/) == null)    {
+		if($('#username').val().length > 2 && $('#username').val().length < 13 && $('#username').val().match(/[^a-zA-Z0-9_-]+/) == null)    {
 			$('form').submit();
 		} else {
 			console.log('Error on the form!');

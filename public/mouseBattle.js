@@ -15,8 +15,7 @@ $(document).ready(function () {
         msg.forEach(m => {
             // If element with ID dosn't exists
             if($('#player' + m.id).length == 0){
-                $('body').append("<div id='player" + m.id +
-                "' class='player'>+</div>");
+                $('body').append("<div id='player" + m.id + "' class='player'>+</div>");
                 $('body').append("<div id='label" + m.id + "' class='label'>" + m.username + "</div>");
                 // Set the color of the player
                 $('#player' + m.id).css('color', m.color);

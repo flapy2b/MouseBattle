@@ -82,9 +82,9 @@ io.on('connection', (socket) => {
 server.listen(3000, () => {
   console.clear();
   console.log('                           ');
-  console.log('  + - - - - - - - - - - +  ');
-  console.log('  |      Started!       |  ');
-  console.log('  |   localhost:3000    |  ');
-  console.log('  + - - - - - - - - - - +  ');
+  console.log('  ┌─────────────────────┐  ');
+  console.log('  │      Started!       │  ');
+  console.log('  │   localhost:3000    │  ');
+  console.log('  └─────────────────────┘  ');
   console.log('                           ');
 });
