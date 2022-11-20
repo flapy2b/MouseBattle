@@ -28,21 +28,10 @@ $(document).ready(function () {
             $('#label' + m.id).css('left', m.x - 15 + 'px');
             $('#label' + m.id).css('top', m.y - 15 + 'px');
 
-<<<<<<< HEAD
         //color = generateRandomColorHex();
         $('#player' + m.id).css('color', m.color);
         $('#label' + m.id).css('color', m.color);
-      }
-      $('#player' + m.id).css('left', m.x + 'px');
-      $('#player' + m.id).css('top', m.y + 'px');
-      $('#label' + m.id).css('left', m.x + 'px');
-      $('#label' + m.id).css('top', m.y - 25 + 'px');
-=======
-            scores += m.username + " : " + m.score + "<br>";
-        });
->>>>>>> 2efe845790393b6e6efeb1c571f916cc8a1897d2
-
-        $('#scores').html(scores);
+      });
     });
 
     // Receive a deconnection from the server

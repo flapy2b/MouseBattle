@@ -1,7 +1,7 @@
 div.home {
 	height: 450px;
 	width: 100%;
-	font-family: sans-serif;
+	font-family: system-ui, sans-serif;
 	background: #fff;
 	cursor: default;
 }
@@ -44,6 +44,7 @@ h1 {
 
 h2 {
 	text-align: center;
+	font-family: system-ui, sans-serif;
 	font-size: 20px;
 	color: #fff;
 	display: block;
@@ -170,12 +171,12 @@ input:focus {
 }
 
 error {
-	display: block;
+	display: none;
 	max-width: 700px;
 	min-width: 400px;
 	min-height: 60px;
 	background: rgba(255, 0, 0, 0.5);
-	border-radius: 20px;
+	border-radius: 10px;
 	border: 2px solid #f00;
 	margin-top: 100px;
 	margin-left: auto;

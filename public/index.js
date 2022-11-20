@@ -22,6 +22,40 @@ $(document).ready(function () {
 		}
 	})
 
+	$('#finish-btn').on('click', function(){
+		if($('#username').val().length > 2 && $('#username').val().length < 13 && 
+			$('#username').val().match(/[^a-zA-Z0-9_-]+/) == null)    {
+			$('form').submit();
+		} else {
+			console.log('Error on the form!');
+			console.log('Look at the red box for more infos')
+			if($('#username').val().match(' ')){
+				$('error').css('display', 'block');
+				$('error h2').html("The username can't contain spaces!");
+			}
+			else if($('#username').val().length > 12) {
+				$('error').css('display', 'block');
+				$('error h2').html("The username have to contain less than 12 characters!");
+			}
+			else if($('#username').val() == "") {
+				$('error').css('display', 'block');
+				$('error h2').html("The username can't be empty!");
+			}
+			else if($('#username').val().length < 3) {
+				$('error').css('display', 'block');
+				$('error h2').html("The username have to contain more than 3 characters!");
+			}
+			else if($('#username').val().match(/[^a-zA-Z0-9_-]+/) != null) {
+				$('error').css('display', 'block');
+				$('error h2').html("The username can't contain special characters!");
+			}
+			else {
+				$('error').css('display', 'block');
+				$('error h2').html("An unknown error hapend!");
+			}
+		}
+	});
+
 });
 
 // Disable the "enter to send" to prevent bugs
