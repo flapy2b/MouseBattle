@@ -2,7 +2,7 @@ div.home {
 	height: 450px;
 	width: 100%;
 	font-family: system-ui, sans-serif;
-	background: #fff;
+	background: #ffffff;
 	cursor: default;
 }
 
@@ -175,7 +175,7 @@ error {
 	max-width: 700px;
 	min-width: 400px;
 	min-height: 60px;
-	background: rgba(255, 0, 0, 0.5);
+	background: #ff000080;
 	border-radius: 10px;
 	border: 2px solid #f00;
 	margin-top: 100px;

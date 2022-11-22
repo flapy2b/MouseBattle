@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var socket = io();
-    var players = [];
+    var players = []; // Define variables
     let searchParams = new URLSearchParams(window.location.search);
     var username = searchParams.get('username');
     var color = searchParams.get('color');

@@ -80,7 +80,7 @@ io.on('connection', (socket) => {
 
 // A console.log() on start and define the port
 server.listen(3000, () => {
-  console.clear();
+  console.clear(); // Clear console
   console.log('                           ');
   console.log('  ┌─────────────────────┐  ');
   console.log('  │      Started!       │  ');
