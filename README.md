@@ -1,4 +1,4 @@
-### │ MouseBattle [v0.2] │
+### │ MouseBattle [v0.2.1] │
 
 A multiplayer mouse battle in a simple webpage.  
 Leave a ⭐️ to support the project!
