@@ -4,9 +4,7 @@
   "description": "A multiplayer mouse battle in a simple webpage.",
   "main": "index.js",
   "scripts": {
-    "test": "npm i express socket.io && node server.js",
-    "run": "npm i express socket.io && node server.js",
-    "start": "npm i express socket.io && node server.js"
+    "start": "npm i express socket.io requirejs && node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +12,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
-    "socket.io": "^4.5.3"
+    "requirejs": "^2.3.6",
+    "socket.io": "^4.5.4"
   }
 }
