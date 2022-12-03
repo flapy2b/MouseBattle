@@ -1,18 +1,18 @@
 {
-    "name": "mouse",
-    "version": "1.0.0",
-    "description": "A multiplayer mouse battle in a simple webpage.",
-    "main": "index.js",
-    "scripts": {
-        "start": "npm i express socket.io requirejs && node zz/serveure.js"
-    },
-    "author": "Gabin293 & flapy2b",
-    "license": "ISC",
-    "dependencies": {
-        "ejs": "^3.1.8",
-        "express": "^4.18.2",
-        "http": "^0.0.1-security",
-        "requirejs": "^2.3.6",
-        "socket.io": "^4.5.4"
-    }
+  "name": "mouse",
+  "version": "1.0.0",
+  "description": "A multiplayer mouse battle in a simple webpage.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i express socket.io requirejs && node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "requirejs": "^2.3.6",
+    "socket.io": "^4.5.4"
+  }
 }
