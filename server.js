@@ -1,3 +1,6 @@
+var requirejs = require('requirejs');
+var config = require('./config.json');
+
 // Create the server
 const express = require('express')
 const app = express()
@@ -75,7 +78,7 @@ io.on('connection', (socket) => {
     coin = JSON.stringify(coin);
     console.log('[o] Coin send: ' + coin);
     io.emit('coin', coin);
-  }, 10000);
+}, config.coinSpawnIntervall);
 });
 
 // A console.log() on start and define the port
