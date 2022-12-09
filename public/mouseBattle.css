@@ -17,17 +17,6 @@ html, body {
 	width: 20px;
 }
 
-#coin2 {
-	position: absolute;
-	color:#FACC2E;
-	/*z-index:-9999999;*/
-	content:url(/coin.gif);
-	height: 20px;
-	width: 20px;
-	left:50px;
-	right: 50px;
-}
-
 #scoreBoard{
 	float:right;
 	border: 1px dotted #bbb;

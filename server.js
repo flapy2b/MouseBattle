@@ -1,10 +1,13 @@
+var requirejs = require('requirejs');
+var config = require('./config.json');
+
 // Create the server
-const express = require('express');
-const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+const express = require('express')
+const app = express()
+const http = require('http')
+const server = http.createServer(app)
+const { Server } = require("socket.io")
+const io = new Server(server)
 var players = []; // Define the players variable
 
 app.use(express.json());
@@ -75,12 +78,12 @@ io.on('connection', (socket) => {
     coin = JSON.stringify(coin);
     console.log('[o] Coin send: ' + coin);
     io.emit('coin', coin);
-  }, 10000);
+}, config.coinSpawnIntervall);
 });
 
 // A console.log() on start and define the port
 server.listen(3000, () => {
-  console.clear();
+  console.clear(); // Clear console
   console.log('                           ');
   console.log('  ┌─────────────────────┐  ');
   console.log('  │      Started!       │  ');
